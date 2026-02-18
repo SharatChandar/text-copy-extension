@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 340px;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #0f0f1a;
+  color: #d4d4e0;
+  font-size: 13px;
+}
+
+.container {
+  padding: 16px;
+}
+
+header {
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0f0f8;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: #7a7a90;
+  margin-top: 2px;
+}
+
+h2 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #a0a0b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.hint {
+  font-size: 11px;
+  color: #5a5a70;
+  margin-bottom: 10px;
+}
+
+.hint code {
+  background: #1e1e30;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 11px;
+  color: #8b8bff;
+}
+
+/* Status bar */
+.status-section {
+  margin-bottom: 14px;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #161625;
+  border-radius: 6px;
+  border: 1px solid #222238;
+  font-size: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #555;
+  flex-shrink: 0;
+}
+
+.dot.active {
+  background: #4caf50;
+  box-shadow: 0 0 6px #4caf5088;
+}
+
+.dot.inactive {
+  background: #ff5252;
+  box-shadow: 0 0 6px #ff525288;
+}
+
+/* Add row */
+.add-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.add-row input {
+  flex: 1;
+  background: #161625;
+  border: 1px solid #2a2a40;
+  border-radius: 6px;
+  padding: 7px 10px;
+  color: #e0e0f0;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.add-row input:focus {
+  border-color: #5b5bff;
+}
+
+.add-row input::placeholder {
+  color: #444460;
+}
+
+.add-row button {
+  background: #5b5bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  width: 34px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.add-row button:hover {
+  background: #4a4ae8;
+}
+
+.add-current-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px dashed #2a2a40;
+  border-radius: 6px;
+  color: #7a7aaa;
+  padding: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-bottom: 10px;
+}
+
+.add-current-btn:hover {
+  border-color: #5b5bff;
+  color: #b0b0ff;
+}
+
+/* Whitelist items */
+.whitelist {
+  list-style: none;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.whitelist::-webkit-scrollbar {
+  width: 4px;
+}
+
+.whitelist::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+
+.whitelist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 7px 10px;
+  background: #161625;
+  border: 1px solid #1e1e30;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: border-color 0.15s;
+}
+
+.whitelist li:hover {
+  border-color: #333350;
+}
+
+.whitelist li .pattern {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 11.5px;
+  color: #c0c0e0;
+  word-break: break-all;
+  white-space: normal;
+  flex: 1;
+  line-height: 1.4;
+  min-width: 0;
+}
+
+.whitelist li .pattern-input {
+  flex: 1;
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 11.5px;
+  color: #e0e0f0;
+  background: #0f0f1a;
+  border: 1px solid #5b5bff;
+  border-radius: 4px;
+  padding: 4px 6px;
+  outline: none;
+  word-break: break-all;
+  min-width: 0;
+  width: 100%;
+}
+
+.whitelist li .actions {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.whitelist li .action-btn {
+  background: transparent;
+  border: none;
+  color: #555570;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0 3px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.whitelist li .action-btn:hover {
+  color: #b0b0ff;
+}
+
+.whitelist li .action-btn.remove-btn:hover {
+  color: #ff5252;
+}
+
+.whitelist li .action-btn.save-btn {
+  color: #4caf50;
+}
+
+.whitelist li .action-btn.save-btn:hover {
+  color: #66cc6a;
+}
+
+.whitelist li .action-btn.cancel-btn:hover {
+  color: #ff9800;
+}
+
+/* Refresh notice */
+.refresh-notice {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: #2a2400;
+  border: 1px solid #4a4000;
+  border-radius: 6px;
+  color: #e0c860;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 16px 10px;
+  color: #5a5a70;
+  font-size: 12px;
+}
+
+.empty-state strong {
+  color: #8b8bff;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Text Quick Copy</h1>
+        <p class="subtitle">Hold Alt + Click or Right-Click → Copy Text</p>
+      </header>
+
+      <section class="status-section">
+        <div id="status-bar" class="status-bar">
+          <span class="dot" id="status-dot"></span>
+          <span id="status-text">Checking…</span>
+        </div>
+      </section>
+
+      <section class="whitelist-section">
+        <h2>URL Whitelist</h2>
+        <p class="hint">
+          Use <code>*</code> as wildcard. Add at least one URL to enable.
+        </p>
+
+        <div class="add-row">
+          <input
+            type="text"
+            id="url-input"
+            placeholder="e.g. https://example.com/*"
+            spellcheck="false"
+          />
+          <button id="add-btn" title="Add URL pattern">+</button>
+        </div>
+
+        <button id="add-current-btn" class="add-current-btn">
+          + Add current tab URL
+        </button>
+
+        <ul id="whitelist" class="whitelist"></ul>
+
+        <div id="empty-state" class="empty-state">
+          <p>No URLs whitelisted — extension is <strong>disabled</strong>. Add a URL to enable.</p>
+        </div>
+
+        <div id="refresh-notice" class="refresh-notice" style="display: none;">
+          ⚠ Refresh the target page for changes to take effect.
+        </div>
+      </section>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
